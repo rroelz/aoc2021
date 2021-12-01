@@ -5,21 +5,21 @@ global window_depth = Vector{Int32}()
 
 window = fill(0, 3)
 for depth in input
-    popat!(window, 1)
+    popfirst!(window)
     push!(window, parse(Int, depth))
-
-    println(window)
 
     win_sum = sum(window)
     push!(window_depth, win_sum)
 end
 
-window_depth = [1,2,3,2,3,4,3]
-
+popfirst!(window_depth)
+popfirst!(window_depth)
 
 for depth in window_depth
     d = depth
-    d > pd && global i+=1
+    if d > pd 
+        global i+=1
+    end
     global pd = d
 end
 print(i-1)
