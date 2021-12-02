@@ -1,4 +1,4 @@
-input = readlines("day1/input1.txt")
+input = readlines("input/input1.txt")
 global i = 0
 global pd = 0
 global window_depth = Vector{Int32}()

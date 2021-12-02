@@ -1,7 +1,7 @@
 xpos = 0
 ypos = 0
 
-instructions = readlines("day2/input2.txt")
+instructions = readlines("input/input2.txt")
 
 for line in instructions
     dir = split(line, " ")
