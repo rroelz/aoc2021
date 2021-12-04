@@ -1,2 +1,2 @@
 # aoc2021
-private repo for advent of code 2021
+Improving my skills in Julia doing Advent of Code 2021
