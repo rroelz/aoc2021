@@ -1,3 +1,5 @@
+using GLMakie
+
 input = readlines("input/5")
 ventmap = zeros(Int, 1000, 1000)
 for line in input
@@ -28,4 +30,4 @@ end
 
 overlap = count(i -> (i>=2), ventmap)
 ventmap
-print("Black smokers overlap at $overlap points")
+print("Black smokers overlap at $overlap points"
