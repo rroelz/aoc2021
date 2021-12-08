@@ -169,3 +169,29 @@ for i in 1:length(number_jumble)
     global score+=parse(Int, score_here)
 end
 print("Yout total score is $score")
+
+using Combinatorics
+
+all_decoders = permutations(possible_segments)
+for i in 1:length(number_jumble)
+    for decoder in all_decoders
+        n_correct = 0
+        for num in number_jumble[i]
+            if parse_segments(translate(num, decoder)) == false
+                break
+            else
+                n_correct+=1
+            end
+            if n_correct == 10
+                score_here = ""
+                for num in display_output[i]
+                    output_num = parse_segments(translate(num, decoder_array))
+                    score_here*= string(output_num)
+                end
+                global score+=parse(Int, score_here)
+            end
+        end
+    end        
+end
+       
+println("Yout brute forced score is $score")
